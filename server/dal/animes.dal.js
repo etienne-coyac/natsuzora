@@ -13,7 +13,6 @@ async function getAllAnimes(enable_nsfw) {
     let result = await db.query(selectRequest)
         .catch(errSQL => { console.error(errSQL.stack); return { rows: [] }; }
         );
-    console.log(result.rows)
     return result.rows;
 }
 
