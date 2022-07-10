@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { Typography, Button } from '@mui/material';
 
 const AnimePage = (props) => {
     const { uuid } = useParams();
@@ -11,22 +11,21 @@ const AnimePage = (props) => {
     }, [findAnime, uuid])
 
     return (
-        <>
-            <motion.div
-                initial={{ opacity: 0, 'transform': 'translateY(20px)' }}
-                animate={{ opacity: 1, 'transform': 'translateY(0px)' }}
-                exit={{ opacity: 0, 'transform': 'translateY(20px)' }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-                style={{ minHeight: '100%' }} >
-                {anime &&
-                    <div className='card col-sm-4'>
-                        <img className='col-sm-6' src={anime.image_url} alt="" />
-                        <h3>{anime.title}</h3>
-                    </div>
-                }
-                <Link to={"/"}>Retour</Link>
-            </motion.div>
-        </>
+        <div>
+            {anime &&
+                <div >
+                    <img src={anime.image_url} alt="" />
+                    <Typography gutterBottom variant="h4" component="h4">{anime.title}</Typography>
+                    <Typography gutterBottom variant="body1" component="p">{anime.synopsis}</Typography>
+                    <Typography gutterBottom variant="body2" component="p">Release : {(new Date(anime.aired_begin).toLocaleDateString("fr"))}</Typography>
+                </div>
+            }
+            <Link to={"/"} style={{ textDecoration: 'none' }}>
+                <Button variant="contained" >
+                    Back
+                </Button>
+            </Link>
+        </div>
     )
 }
 export default AnimePage;
