@@ -1,0 +1,30 @@
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.registration_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 64px);
+  overflow: hidden;
+}
+.registration_page .register_form {
+  display: flex;
+  flex-direction: column;
+}
+.registration_page .register_form .form_input {
+  margin: 15px;
+}
+
+.outlined_button {
+  text-decoration: none;
+  margin-left: 10px;
+}/*# sourceMappingURL=register.css.map */
