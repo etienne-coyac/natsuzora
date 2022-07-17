@@ -13,7 +13,10 @@ module.exports.getAllAnimes = async (req, res) => {
 module.exports.getAnimeByUuid = async (req, res) => {
     let anime = await animesService.getAnimeByUuid(req.params.uuid);
     if (anime.length === 0) res.status(404).send({ error: 'No anime found for this uuid.' });
-    else res.status(201).send(anime);
+    else {
+        console.log(anime)
+        res.status(201).send(anime);
+    }
 }
 
 module.exports.insertAnimesWithAPI = async (req, res) => {

@@ -6,4 +6,9 @@ const registerValidate = [
     check('password').trim().escape()
 ];
 
-module.exports = { registerValidate }
+const loginValidate = [
+    check('username').trim().escape(),
+    check('password').trim().escape()
+];
+
+module.exports = { registerValidate, loginValidate }

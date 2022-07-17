@@ -26,12 +26,17 @@ async function authenticate(username, password) {
 
 async function verifyUserRefreshToken(user) {
     let db_user = await authDal.getUser(user.username);
-
+    if (db_user.length === 1 && db_user[0].role === user.role) {
+        db_user = db_user[0];
+        delete db_user.password;
+        return db_user;
+    }
+    return false;
 }
 
 function generateAccessToken(user) {
     return jwt.sign(user, process.env.JWT_SECRET, {
-        expiresIn: '3600s',
+        expiresIn: '1500s',
     });
 }
 
