@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"animeCard.css"}
+{"version":3,"sources":["animeCard.scss","animeCard.css"],"names":[],"mappings":"AAAA;EACI,gBAAA;EACA,4BAAA;EACA,oBAAA;EACA,qBAAA;EACA,YAAA;ACCJ;;ADGA;EACI,aAAA;EACA,iBAAA;ACAJ;ADEI;EAJJ;IAKQ,iBAAA;ECCN;AACF;ADCI;EACI,aAAA;ACCR;;ADGA;EACI,qBAAA;EACA,cAAA;EACA,cAAA;EACA,gBAAA;ACAJ;ADEI;EACI,yBAAA;EACA,aAAA;ACAR;ADGQ;EALJ;IAMQ,aAAA;ECAV;EDEU;IACI,sBAAA;ECAd;AACF","file":"animeCard.css"}

@@ -1,1 +1,39 @@
-/*# sourceMappingURL=animeCard.css.map */
+.anime-card-title {
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  margin: 15px;
+}
+
+.anime_card {
+  display: flex;
+  max-height: 240px;
+}
+@media screen and (min-width: 768px) {
+  .anime_card {
+    max-height: 320px;
+  }
+}
+.anime_card .anime_card_content {
+  padding: 15px;
+}
+
+.image_card_link {
+  text-decoration: none;
+  min-width: 40%;
+  max-width: 40%;
+  overflow: hidden;
+}
+.image_card_link .card_image {
+  transition-duration: 0.5s;
+  height: 240px;
+}
+@media screen and (min-width: 768px) {
+  .image_card_link .card_image {
+    height: 320px;
+  }
+  .image_card_link .card_image:hover {
+    transform: scale(1.05);
+  }
+}/*# sourceMappingURL=animeCard.css.map */

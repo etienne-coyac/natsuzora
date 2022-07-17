@@ -3,3 +3,19 @@
     padding: 0;
     margin: 0;
 }
+
+.menu_login_link {
+    text-decoration: none;
+    color: white;
+}
+
+.menu_title {
+    font-family: "Anurati" !important;
+    src: local('Anurati'), url(./../../fonts/Anurati-Regular.otf) format('truetype') !important;
+    letter-spacing: 6px !important;
+}
+
+.menu {
+    background-color: rgb(24, 24, 24) !important;
+
+}

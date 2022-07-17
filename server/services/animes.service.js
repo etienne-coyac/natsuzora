@@ -34,6 +34,8 @@ function animeToArrayForInsert(anime) {
 function animeToArrayForUpdate(anime) {
     let genres = anime.genres.reduce((a, b) => ({ ...a, [b.mal_id]: b.name }), {})// create object of genre object with only id and name
     let themes = anime.themes.reduce((a, b) => ({ ...a, [b.mal_id]: b.name }), {});
+
+
     let demographics = anime.demographics.reduce((a, b) => ({ ...a, [b.mal_id]: b.name }), {});
     let studios = anime.studios.reduce((a, b) => ({ ...a, [b.mal_id]: b.name }), {});
     //  <!> l'ordre correspond à celui de l'update <!>
@@ -94,7 +96,7 @@ async function insertAnimes(season = false, year = false) {
     if (!year) year = new Date().getFullYear();
     let limit = await configService.getConfig('insert_limit', 25);
 
-    let url = `https://api.jikan.moe/v4/seasons/${year}/${season}?limit=${limit}`;
+    let url = `https://api.jikan.moe/v4/seasons/${season}/${year}?limit=${limit}`;
 
     let data = await fetch(url).then(response => response.json());
 
