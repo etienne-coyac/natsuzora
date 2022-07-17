@@ -34,13 +34,17 @@ module.exports.refreshToken = async (req, res) => {
         return res.sendStatus(401);
     }
 
-    jwt.verify(token, process.env.JWT_REFRESH_SECRET, (err, user) => {
+    jwt.verify(token, process.env.JWT_REFRESH_SECRET, async (err, user) => {
         if (err) return res.sendStatus(401);
 
-        let verified_user = authService.verifyUserToken(user)
+        const valid_user = await authService.verifyUserRefreshToken(user);
 
-
-        req.user = user;
-        next();
+        if (valid_user) {
+            const new_token = authService.generateAccessToken(valid_user);
+            res.status(200).send({ auth: true, token: new_token, result: valid_user });
+        }
+        else {
+            return res.sendStatus(401);
+        }
     });
 }
